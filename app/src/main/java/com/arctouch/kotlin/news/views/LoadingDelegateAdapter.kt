@@ -13,7 +13,7 @@ class LoadingDelegateAdapter : ViewTypeDelegateAdapter {
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder
             = SpinnerViewHolder(parent)
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: ViewType) { }
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: ViewItem) { }
 
     class SpinnerViewHolder(parent : ViewGroup) : RecyclerView.ViewHolder
                 (parent.inflate(R.layout.news_item_loading)) {
