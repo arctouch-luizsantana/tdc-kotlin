@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.news_item.view.*
 /**
  * Created by luizsantana on 5/4/16.
  */
-class NewsAdapterDelegate : ViewTypeDelegateAdapter {
+class NewsDelegateAdapter : ViewTypeDelegateAdapter {
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder = NewsViewHolder(parent)
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: ViewItem) {
@@ -20,7 +20,7 @@ class NewsAdapterDelegate : ViewTypeDelegateAdapter {
     }
 
     class NewsViewHolder(parent : ViewGroup) : RecyclerView.ViewHolder
-        (parent.inflate(R.layout.news_item_loading)) {
+        (parent.inflate(R.layout.news_item)) {
 
         fun bind(item : RedditNewsItem) = with(itemView) {
             img_thumbnail.loadImgUrl(item.thumbnail)

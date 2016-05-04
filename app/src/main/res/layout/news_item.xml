@@ -11,6 +11,7 @@
         android:id="@+id/img_thumbnail"
         android:layout_width="50dip"
         android:layout_height="50dip"
+        android:background="@android:color/black"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"

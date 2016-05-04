@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.arctouch.kotlin.R
 import com.arctouch.kotlin.commons.extensions.inflate
+import com.arctouch.kotlin.news.models.RedditNewsItem
+import com.arctouch.kotlin.news.views.NewsAdapter
 import kotlinx.android.synthetic.main.fragment_news.*
 
 /**
@@ -28,5 +30,26 @@ class NewsFragment : Fragment() {
 
         newsList.setHasFixedSize(true) // Executado de maneira Lazy
         newsList.layoutManager = LinearLayoutManager(context)
+        val newsAdapter = NewsAdapter()
+        newsList.adapter = newsAdapter
+
+        if (savedInstanceState == null) {
+            newsAdapter.addNews(mockData())
+        }
+    }
+
+    private fun mockData() : List<RedditNewsItem> {
+        val news = mutableListOf<RedditNewsItem>()
+
+        for (i in 1..10) {
+            news.add(RedditNewsItem(
+                    "Author $i",
+                    "Title $i",
+                    "http://lorempixel.com/200/200/technics/$i", // thumbnail
+                    i // number of comments
+            ))
+        }
+
+        return news
     }
 }

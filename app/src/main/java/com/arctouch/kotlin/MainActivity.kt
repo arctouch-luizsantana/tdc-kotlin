@@ -36,4 +36,16 @@ class MainActivity : AppCompatActivity() {
             manager.popBackStack(first.id, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         }
     }
+
+    /**
+     * Finish activity when reaching the last fragment.
+     */
+    override fun onBackPressed() {
+        val fragmentManager = supportFragmentManager;
+        if (fragmentManager.backStackEntryCount > 1) {
+            fragmentManager.popBackStack();
+        } else {
+            finish();
+        }
+    }
 }
