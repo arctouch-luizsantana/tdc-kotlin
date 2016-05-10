@@ -1,7 +1,6 @@
 @file:JvmName("ExtensionsUtils")
 package com.arctouch.kotlin.commons.extensions
 
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +17,7 @@ fun ViewGroup.inflate(layoutId : Int, attachToRoot : Boolean = false) : View {
 }
 
 fun ImageView.loadImgUrl(imageUrl : String?) {
-    if (TextUtils.isEmpty(imageUrl)) {
+    if (imageUrl.isNullOrEmpty()) {
         Picasso.with(context)
                 .load(R.mipmap.ic_launcher)
                 .into(this)
