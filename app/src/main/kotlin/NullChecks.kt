@@ -18,9 +18,11 @@ fun sendEmailToClient(client: Client?, message: String?, mailer: Mailer) {
 }
 
 fun main(args: Array<String>) {
-    val mailer = Mailer()
+    val message = "Message"
 
-    sendEmailToClient(Client(), null, mailer)
+    val mailer : Mailer? = Mailer()
+
+    sendEmailToClient(Client(), message, mailer!!)
 
     sendEmailToClient(Client(ClientInfo("client@xyz.com")), "Message", mailer)
 

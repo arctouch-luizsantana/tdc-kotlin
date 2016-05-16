@@ -1,3 +1,5 @@
+import kotlin.properties.Delegates
+
 interface Funk {
     var views: Long
 
@@ -29,8 +31,24 @@ class Animal : Moveable {
     override fun move() { print("animal is moving") }
 }
 
+class Computer {
+
+}
+
 class Human : Moveable, Walkable {
+
     override fun move() {
         super<Walkable>.move()
+    }
+}
+
+class Panelist {
+    val presentation : String by lazy {
+        "Kotlin!!!!"
+    }
+
+    var numberOfQuestions : Int by Delegates.observable(0) {
+        prop, old, new ->
+        println("It was ${old} not it is ${new}")
     }
 }
